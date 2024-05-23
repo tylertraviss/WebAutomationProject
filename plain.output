@@ -1,0 +1,7 @@
+Feature: User Authentication
+
+  Scenario: User can see the logout link after successful login
+    Given I am on the login page ... passed in 4.142s
+    When I log in with valid credentials ... passed in 8.482s
+    Then I should see the delete account link ... passed in 3.487s
+

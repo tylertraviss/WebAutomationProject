@@ -1,0 +1,34 @@
+Requirements/Outcomes
+
+Task 1: Web testing
+
+[Auto] testing perspective:
+1.	Test cases were created.
+2.	BDD approach was used for test automation, so test cases can be linked (and back linked) to the code.
+3.	A framework, that can be used to automate Web tests, is built.
+4.	Framework is flexible and easy to use, so your colleague can automate other Web TCs using it.
+5.	Each test execution provides reasonable reports (also linked to TCs)
+
+Software development perspective:
+1.	Code base is under version control (please do not delete branches after merge)
+2.	Code was created with following [your favourite programming language] code standards and guidelines. 
+3.	Code is documented.
+4.	Framework provides sufficient and flexible logging.
+
+
+
+
+
+
+
+
+Task 2: API testing
+
+1.	API tests are automated within the framework (i.e., there is the same set of requirements as for Web tests)
+
+OR
+
+2.	API tests are automated using a Postman/SOAPUI-like tool. In that case, the solution:
+2.1	can be run using different environments (suppose you have several)
+2.2	can be run with parameters provided in a CSV file.
+2.3	should be easily integrated into Continuous integration system (i.e., can be launched with command line interface)

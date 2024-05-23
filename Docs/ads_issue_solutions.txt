@@ -1,0 +1,47 @@
+https://github.com/gorhill/uBlock/releases?Or
+
+
+SelenideElement frame = Selenide.$(
+                    By.xpath("//iframe[contains(@name,'aswift') and contains(@style,'visibility: visible')]"));
+            if (frame.exists() && frame.isDisplayed()) {
+                Selenide.switchTo().frame(frame);
+                SelenideElement button = Selenide.$(By.id("dismiss-button"));
+                // some Ads have that button in the first frame
+                if (button.isDisplayed() && button.isEnabled()) {
+                    button.click();
+                } else {
+                    // can check the second frame as well
+                    Selenide.switchTo().frame(Selenide.$(By.id("ad_iframe")));
+                    Selenide.$(By.id("dismiss-button")).click();
+                    Selenide.switchTo().defaultContent();
+                }
+            }
+
+if WebDriverWait(driver, 0).until(EC.presence_of_element_located(By.XPATH, "//iframe[contains(@name, 'aswift') and contains(@style, 'visibility: visible')]")):
+
+if WebDriverWait(driver, 0).until(EC.visibility_of_element_located((By.XPATH, "//iframe[contains(@name, 'aswift') and contains(@style, 'visibility: visible')]"))):
+
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+
+---
+
+frame = driver.find_element(By.XPATH, "//iframe[contains(@name,'aswift') and contains(@style,'visibility: visible')]")
+if frame is not None and frame.is_displayed():
+    driver.switch_to.frame(frame)
+    try:
+        button = driver.find_element(By.ID, 'dismiss-button')
+        if button is not None and button.is_displayed() and button.is_enabled():
+            button.click()
+    except NoSuchElementException:
+        driver.switch_to.frame(driver.find_element(By.ID, 'ad_iframe'))
+        button = driver.find_element(By.ID, 'dismiss-button')
+        button.click()
+    driver.switch_to.default_content()
+
+def click_avoid_ads(browser, element):
+    element.click()
+    if "#google_vignette" in browser.current_url:
+        browser.back()
+        element.click()    

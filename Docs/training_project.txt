@@ -1,0 +1,80 @@
+Technology stack #2 (recommended):
+3. Python
+4. Selenium
+5. Behave (https://behave.readthedocs.io/en/stable/)
+
+Task #1 (mandatory). Web UI
+
+For Web test cases you will need to create an account manually, prior to automation.
+
+(use predefined test cases or try to generate some by yourself)
+
+As a registered user, I am able to login into website (https://www.automationexercise.com). I can see Products page and able to search for
+"tshirts" products there. I can add 2 T-Shirts I like to cart. Then I can see all products I have added in the cart. I am also able to
+remove 1 T-Shirt that I don't like from the cart.
+When I am ready to buy, I can proceed to checkout and place my order. Then I enter my card details and pay for the order. 
+After my order is processed, I am able to download an Invoice.
+
+You are supposed to implement:
+ Page Object Model / Page Factory 
+ Logging
+ Reporting
+
+Task #2(mandatory). API.
+
+(Use Python Requests Library)
+
+As a 3rd-party application that uses an exposed API (see https://www.automationexercise.com/api_list), I should be able to create an account, based on information I have about the user. I should have an option to create several accounts, based on information from the CSV file.
+After account creation, I can verify that the account was created with exactly the same parameters that were provided.
+I should be able to change account's address after creation. I should be able to delete an account or multiple accounts from file.
+
+Read all CSV data, into API (post), give examples doing all the following
+
+Task #3. Code quality.
+As it was mentioned: "follow [your favorite programming language] code standards and guidelines".
+Code quality tools may help with that. 
+  Add some quality to your Task#1 code (WebUI).
+
+Task#3.1. Analyze your code with IDE built-in code quality tool. Make changes suggested.
+Task#3.2. Install SonarLint plugin and analyze your code with it. Make changes suggested.
+Task#3.3. Publish your code quality report in SonarCloud (https://www.sonarsource.com/) (free account has this option).
+
+Task #4. Continuous Integration.
+
+Install Jenkins (https://www.jenkins.io/) Continuous Integration app, locally.
+Create a job that will checkout the code from your repository(Task #1) and launch your test framework tests. Schedule it to run every Tuesday and Friday at 9:30 am. Pay attentions, that modern day repositories do not ask for your actual repo password when logging in using third-party apps(like Jenkins) but for so-called "app password/token" you can generate online.
+
+ GitHub
+https://docs.github.com/en/enterprise-server@3.4/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
+BitBucket
+https://support.atlassian.com/bitbucket-cloud/docs/create-an-app-password/
+
+Task #4.1. Create this job using Free Style project
+Task #4.2. Create this job using Pipeline syntax
+
+Task #5. Continuous Integration + Containers
+
+Using GitHub Actions/Bitbucket Pipelines, create a pipeline to run your TCs in a Docker container in the cloud. Pay attention, the have a limited number of minutes to execute your pipelines at free tier, so be careful :)
+
+Task#6. Switch to another technology 
+Please switch to another technology (i.e. from Python to Java, from Java to C#...) and do the same task #1 (Web UI).
+
+Task#7. Performance testing
+Using Apache JMeter (https://jmeter.apache.org/) create a simple scenario to test 10 simultaneous logins into test site (please don't test it with 1K, it's a public website)
+
+Task#8. OCR testing
+Using an OCR technology framework SikuliX (http://sikulix.com/), create some basic tests for your operating system calculator
+
+Another task came to your managers mind! In fact that's a very useful topic, especially if you work in a team for a long-running project with a huge codebase.
+It is Code Quality.
+I have already mentioned to "follow [your favorite programming language] code standards and guidelines", and, on the other hand, I pointed out some of you to "non-clean" code. But if a project grows large you and your teammates who review your code may miss some code quality issues.
+
+Code quality tools may help. First, in all modern IDE, there is a built-in code quality tool (like "Code/Analyze Code" in Intellij). There are drawbacks of that tool: you have to run it manually, and you have to run it locally (i.e., you are not able to run it on someone's pull request).
+Here, cloud systems come in handy. One of them is SonarCube (https://www.sonarsource.com/). You can use their plugin to add code analyzer to you IDE, and you can publish your code quality in the cloud.
+The task is (you can do it before or after or along with task 5): 
+ Task#6. Add some quality to your code (from WebUI testing).
+6.1. Analyze your code with internal code quality tool. Make changes suggested.
+6.2. Install SonarLint plugin and analyze your code with it. Make changes suggested.
+6.3. Publish your code quality report in SonarCloud (free account has this option).
+
+

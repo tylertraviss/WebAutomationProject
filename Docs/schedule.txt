@@ -1,0 +1,27 @@
+Week 1: 
+HR Training and Onboarding
+
+Week 2: 
+QE_FUNDAMENTALS_01B
+QE_FUNDAMENTALS_02B
+QE_FUNDAMENTALS_03
+QE_FUNDAMENTALS_04
+QE_FUNDAMENTALS_05
+QE_FUNDAMENTALS_06
+AGILE_FUNDAMENTALS_01
+AGILE_FUNDAMENTALS_02B
+AGILE_FUNDAMENTALS_03
+
+Week 3 (till the end on training) Hands-on training
+DATABASE_FUNDAMENTALS_01
+API_FUNDAMENTALS_01
+WEB_FUNDAMENTALS_01
+AUTOMATION_FUNDAMENTALS_01
+AUTOMATION_FUNDAMENTALS_02
+AUTOMATION_FUNDAMENTALS_03
+AUTOMATION_FUNDAMENTALS_04
+
+You should complete those courses at the end of corresponding week. Starting week 3 you will need to participate in a training project. You will be provided with tasks you are supposed to automate. There are mandatory tasks as well as optional. You are supposed to create a code that will be reviewed by your Trainer.
+
+
+The goal of training is to train you enough to join any project, so the time limit can be extended.

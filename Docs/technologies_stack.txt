@@ -1,0 +1,41 @@
+Projects technologies stack 
+
+Please use this guide to choose technologies
+to implement task #1 and possibly #2.
+
+Technologies stack choice guide:
+1. Consult with your squad leader and accept their technologies stack.
+2. If they don't have one or don't recommend to use it, choose between technologies stacks below.
+3. If you are familiar with tools, not listed here and want to use it, please consult with your Trainer.
+
+For all choices:
+1. Git
+2. Gherkin BDD
+
+
+Technology stack #1 (alternate):
+3. Java
+4. Selenium/Selenide (https://selenide.org/)
+5. Cucumber (https://cucumber.io)
+
+
+Technology stack #2 (recommended):
+3. Python
+4. Selenium
+5. Behave (https://behave.readthedocs.io/en/stable/)
+
+
+Technology stack #3 (alternate):
+3. C#
+4. Selenium
+5. SpecFlow (https://specflow.org/)
+
+
+Technology stack #4 (alternate):
+3. Katalon studio
+
+
+Technology stack #5 (alternate):
+3. Cypress (https://www.cypress.io/)
+4. Typescript
+5. Cypress BDD (https://www.toolsqa.com/cypress/bdd-automation-framework-in-cypress/)
