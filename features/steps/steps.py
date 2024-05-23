@@ -23,6 +23,8 @@ log_file = os.path.join(log_folder, f'WebAutomationProject_{current_time}.log')
 logging.basicConfig(filename=log_file, level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+productsButtonPath = 'a[href="/products"]'
+
 @given('I am on the login page')
 def step_impl(context):
     context.driver = webdriver.Edge()  # Initialize WebDriver (replace with appropriate browser)
@@ -52,6 +54,14 @@ def step_impl(context):
     logger.info('I can see the delete account link, thus I am logged in.')
 
     context.driver.quit()  # Close the browser
+
+#//a[@href='/products']
+
+@then("I will go to the products page")
+def step_impl(context):
+    context.driver.get("https://www.automationexercise.com/products")
+    time.sleep(5)
+    
 
 # @given('I can add 2 T-Shirts I like to cart')
 # def step_impl(context):

@@ -5,6 +5,9 @@ Feature: User Authentication
     When I log in with valid credentials
     Then I should see the delete account link
 
+# Also check if are showing error signing in message properly.
+# Test the wrong login credentias
+
 # Feature: Online Shopping
 
 #   Scenario: Purchase T-Shirts and Download Invoice
