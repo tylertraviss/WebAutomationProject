@@ -2,12 +2,25 @@ from behave import given, when, then
 import logging
 from selenium import webdriver
 from pages.login_page import LoginPage
+import time, os
 #from pages.products_page import ProductsPage
 #from pages.cart_page import CartPage
 #from pages.checkout_page import CheckoutPage
 from selenium.webdriver.common.by import By
 
-logging.basicConfig(filename='myapp.log', level=logging.INFO)
+# Create the 'allLogs' folder if it doesn't exist
+log_folder = 'allLogs'
+if not os.path.exists(log_folder):
+    os.makedirs(log_folder)
+
+# Define log format
+log_format = '%(asctime)s - %(levelname)s - %(message)s'
+
+# Dynamically generate log file name using current time
+current_time = time.strftime("%Y-%m-%d_%H-%M-%S")
+log_file = os.path.join(log_folder, f'WebAutomationProject_{current_time}.log')
+
+logging.basicConfig(filename=log_file, level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 @given('I am on the login page')
@@ -16,12 +29,15 @@ def step_impl(context):
     context.login_page = LoginPage(context.driver)
     context.login_page.load()
 
-    logger.info('Attempting to login...')
+    logger.info('Arrived on login page.')
     
 
 @when('I log in with valid credentials')
 def step_impl(context):
-    context.login_page.login("ttravis@qac.com", "QAPassword")
+    email = "ttravis@qac.com"
+    password = "QAPassword"
+    context.login_page.login(email, password)
+    logger.info('Attempting to login with credentials username: {}, and password: {}'.format(email, password))
 
 # @then('I should see the products page')
 # def step_impl(context):
@@ -33,6 +49,8 @@ def step_impl(context):
     delete_account_link_locator = (By.XPATH, "//a[contains(text(), 'Delete Account')]")
     delete_account_link = context.driver.find_elements(*delete_account_link_locator)
     assert delete_account_link, "Delete Account link not found on the page, not successfully logged in."
+    logger.info('I can see the delete account link, thus I am logged in.')
+
     context.driver.quit()  # Close the browser
 
 # @given('I can add 2 T-Shirts I like to cart')
