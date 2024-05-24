@@ -7,4 +7,4 @@ Feature: Online Shopping Testing
     
     @productsTest
     Scenario: Accessing Product Page
-        Then I will go to the products page
+        When I will go to the products page

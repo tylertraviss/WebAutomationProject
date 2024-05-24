@@ -3,6 +3,8 @@ import logging
 from selenium import webdriver
 from pages.login_page import LoginPage
 import time, os
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
 #from pages.products_page import ProductsPage
 #from pages.cart_page import CartPage
 #from pages.checkout_page import CheckoutPage
@@ -53,14 +55,30 @@ def step_impl(context):
     assert delete_account_link, "Delete Account link not found on the page, not successfully logged in."
     logger.info('I can see the delete account link, thus I am logged in.')
 
-    context.driver.quit()  # Close the browser
+    #context.driver.quit()  # Close the browser
 
 #//a[@href='/products']
 
-@then("I will go to the products page")
+@when("I will go to the products page")
 def step_impl(context):
     context.driver.get("https://www.automationexercise.com/products")
-    time.sleep(5)
+    
+
+@then("I will purchase product id 2")
+def step_impl(context):
+    try:
+    # Wait until the element is present and clickable
+        add_to_cart_button = WebDriverWait(context.driver, 10).until(
+            EC.element_to_be_clickable((By.CSS_SELECTOR, 'a[data-product-id="2"].add-to-cart'))
+        )
+        # Click the "Add to cart" button
+        add_to_cart_button.click()
+        print("Clicked on the 'Add to cart' button.")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+
+
+    
     
 
 # @given('I can add 2 T-Shirts I like to cart')
