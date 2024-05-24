@@ -8,3 +8,5 @@ Feature: Online Shopping Testing
     @productsTest
     Scenario: Accessing Product Page
         When I will go to the products page
+        Then I will add product id 2
+        Then Click continue shopping

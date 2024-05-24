@@ -64,7 +64,7 @@ def step_impl(context):
     context.driver.get("https://www.automationexercise.com/products")
     
 
-@then("I will purchase product id 2")
+@then("I will add product id 2")
 def step_impl(context):
     try:
     # Wait until the element is present and clickable
@@ -74,11 +74,20 @@ def step_impl(context):
         # Click the "Add to cart" button
         add_to_cart_button.click()
         print("Clicked on the 'Add to cart' button.")
+        logger.info("Clicked on the 'Add to cart' button for item 1.")
     except Exception as e:
         print(f"An error occurred: {e}")
 
 
+@then("Click continue shopping")
+def step_impl(context):
+     # Wait until the "Continue Shopping" button in the modal is present and clickable
+    continue_shopping_button = WebDriverWait(context.driver, 10).until(
+        EC.element_to_be_clickable((By.CSS_SELECTOR, 'button.btn.btn-success.close-modal.btn-block[data-dismiss="modal"]'))
+    )   
     
+    continue_shopping_button.click()
+    logger.info("Clicked on the 'Continue Shopping' button.") 
     
 
 # @given('I can add 2 T-Shirts I like to cart')
